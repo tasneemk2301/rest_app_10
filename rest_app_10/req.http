@@ -1,0 +1,133 @@
+GET http://localhost:3000/bank/register
+
+
+###
+
+
+POST http://localhost:3000/bank/register
+content-type: application/json
+
+{
+    "username": "cts", 
+    "email": "cts@gmail.com", 
+    "password": "cts123"
+}
+
+
+###
+
+
+GET http://localhost:3000/bank/login
+
+
+###
+
+POST http://localhost:3000/bank/login
+content-type: application/json
+
+{
+    "username": "local", 
+    "password": "local234"
+}
+
+
+###
+POST http://localhost:3000/bank/forgot_password
+content-type: application/json
+
+{
+    "email": "local@gmail.com", 
+    "username": "local",
+    "password": "localreset"
+}
+
+ 
+
+###
+
+GET http://localhost:3000/bank/balance
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNTAwMC4wIiwiaWF0IjoxNjcxNDI0NzYzLCJleHAiOjE2NzE1MTExNjN9.J-H7rG4lemRiUia4FrGHHg-PG-aX5JMxJsNG05k_g5A
+
+ 
+
+###
+
+GET http://localhost:3000/bank/credit/250.3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNTAwMC4wIiwiaWF0IjoxNjcxNDI0NzYzLCJleHAiOjE2NzE1MTExNjN9.J-H7rG4lemRiUia4FrGHHg-PG-aX5JMxJsNG05k_g5A
+
+ 
+
+###
+
+
+POST http://localhost:3000/bank/change_password
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNTAwMC4wIiwiaWF0IjoxNjcxNDI0NzYzLCJleHAiOjE2NzE1MTExNjN9.J-H7rG4lemRiUia4FrGHHg-PG-aX5JMxJsNG05k_g5A
+content-type: application/json
+
+{
+    "email": "local@gmail.com", 
+    "oldPassword": "local123",
+    "newPassword": "local234"
+}
+
+
+###
+GET http://localhost:3000/bank/bills?electricity=600
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNTAwMC4wIiwiaWF0IjoxNjcxNDI0NzYzLCJleHAiOjE2NzE1MTExNjN9.J-H7rG4lemRiUia4FrGHHg-PG-aX5JMxJsNG05k_g5A
+
+
+###
+
+GET http://localhost:3000/bank/bills?phone=400
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNTAwMC4wIiwiaWF0IjoxNjcxNDI0NzYzLCJleHAiOjE2NzE1MTExNjN9.J-H7rG4lemRiUia4FrGHHg-PG-aX5JMxJsNG05k_g5A
+
+
+###
+
+GET http://localhost:3000/bank/bills?electricity=200&phone=100
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNTAwMC4wIiwiaWF0IjoxNjcxNDI0NzYzLCJleHAiOjE2NzE1MTExNjN9.J-H7rG4lemRiUia4FrGHHg-PG-aX5JMxJsNG05k_g5A
+
+
+###
+
+
+
+
+GET http://localhost:3000/app/users
+
+###
+
+GET http://localhost:3000/app/users/UserUsername/admin
+
+###
+
+
+GET http://localhost:3000/app/users/UserEmail/admin@gmail.com
+
+###
+
+POST http://localhost:3000/app/users
+content-type: application/json
+
+{
+    "username": "admin", 
+    "email": "admin@gmail.com", 
+    "password": "admin123"
+}
+
+###
+
+DELETE http://localhost:3000/app/users/DeleteUsername/local
+
+
+###
+
+PUT http://localhost:3000/app/users/UpdateUsername/admin
+content-type: application/json
+
+
+{
+    "username": "admin", 
+    "email": "admin@gmail.com", 
+    "password": "admin234"
+}
