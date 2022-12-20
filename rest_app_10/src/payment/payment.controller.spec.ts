@@ -19,19 +19,19 @@ describe('PaymentController', () => {
 
   beforeEach(async () => {
 
-    const module:TestingModule = await Test.createTestingModule({imports: [TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'pass@word1',
-      database: 'myapp', 
-      entities: [],
-      autoLoadEntities: true,
-      synchronize: true
-     }), TypeOrmModule.forFeature([User])],
-      providers: [AuthService,UsersService,JwtService]
-    }).compile();
+    // const module:TestingModule = await Test.createTestingModule({imports: [TypeOrmModule.forRoot({
+    //   type: 'mysql',
+    //   host: 'localhost',
+    //   port: 3306,
+    //   username: 'root',
+    //   password: 'pass@word1',
+    //   database: 'myapp', 
+    //   entities: [],
+    //   autoLoadEntities: true,
+    //   synchronize: true
+    //  }), TypeOrmModule.forFeature([User])],
+    //   providers: [AuthService,UsersService,JwtService]
+    // }).compile();
     //paymentController= module.get<PaymentController>(PaymentController);
 
     userService = new UsersService(usersRepository);
@@ -54,16 +54,16 @@ describe('PaymentController', () => {
 
   it('Pay Electricity Bill', async() => {
 
-    const result:Promise<User> = new Promise((resolve, reject)=>{
-      resolve(
-        {
-          username: "local",
-          password: "local123",
-          email: "local@gmail.com",
-          balance: 4700.0,
-        }
-      )
-    });
+    // const result:Promise<User> = new Promise((resolve, reject)=>{
+    //   resolve(
+    //     {
+    //       username: "local",
+    //       password: "local123",
+    //       email: "local@gmail.com",
+    //       balance: 4700.0,
+    //     }
+    //   )
+    // });
     const request:any= {user:{username: "local", password: "local123", email: "local@gmail.com", balance: 4700.0}};
 
 
@@ -80,16 +80,16 @@ describe('PaymentController', () => {
 
   it('Pay both Electricity Bill and Phone Bill', async() => {
 
-        const result:Promise<User> = new Promise((resolve, reject)=>{
-          resolve(
-            {
-              username: "local",
-              password: "local123",
-              email: "local@gmail.com",
-              balance: 4700.0,
-            }
-          )
-        });
+        // const result:Promise<User> = new Promise((resolve, reject)=>{
+        //   resolve(
+        //     {
+        //       username: "local",
+        //       password: "local123",
+        //       email: "local@gmail.com",
+        //       balance: 4700.0,
+        //     }
+        //   )
+        // });
         const request:any= {user:{username: "local", password: "local123", email: "local@gmail.com", balance: 4700.0}};
     
     
@@ -105,16 +105,16 @@ describe('PaymentController', () => {
 
       it('Balance exceeding Bill', async() => {
 
-        const result:Promise<User> = new Promise((resolve, reject)=>{
-          resolve(
-            {
-              username: "local",
-              password: "local123",
-              email: "local@gmail.com",
-              balance: 400.0,
-            }
-          )
-        });
+        // const result:Promise<User> = new Promise((resolve, reject)=>{
+        //   resolve(
+        //     {
+        //       username: "local",
+        //       password: "local123",
+        //       email: "local@gmail.com",
+        //       balance: 400.0,
+        //     }
+        //   )
+        // });
         const request:any= {user:{username: "local", password: "local123", email: "local@gmail.com", balance: 400.0}};
     
     
