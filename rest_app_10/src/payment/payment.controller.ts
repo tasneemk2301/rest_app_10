@@ -1,7 +1,7 @@
 import { BadRequestException, Controller, Get, Query, Req, UseGuards } from '@nestjs/common';
-import { UsersService } from 'src/users/users.service';
-import { AuthService } from 'src/auth/auth.service';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { UsersService } from '../users/users.service';
+import { AuthService } from '../auth/auth.service';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('bank')
 export class PaymentController {
@@ -13,8 +13,12 @@ export class PaymentController {
     async payElectricity(@Req() req:Request, @Query('electricity') electricity?:number, @Query('phone') phone?:number ) {
         const temp= await this.userService.findByUsername(req['user']['username']);
         let balance = temp.balance;
-        if(!!electricity && balance>=+electricity){
-            console.log("hi");
+        let invoice1:string;
+        let invoice2:string;
+        let flag1=0;
+        let flag2=0;
+        if(!!electricity)
+        {if(!!electricity && balance>=+electricity){
             const userCheck= await this.userService.findByUsername(req['user']['username']);
             console.log(userCheck);
             if(!!userCheck){
@@ -24,13 +28,19 @@ export class PaymentController {
                 req['user']['balance']= +req['user']['balance'] - electricity;
                 console.log(userCheck);
                 const updatedUser= await this.userService.updateUser(userCheck.username, userCheck);
+                flag1=1;
                 console.log(`You have paid electricity bill worth Rs. ${electricity}`);
+                invoice1=`You have paid electricity bill worth Rs. ${electricity}`;
             }
             else{
                 throw new BadRequestException();
             }
         }
-        if(!!phone && balance>=+phone){
+        else{
+            throw new BadRequestException("Insufficient Balance");
+        }}
+        if(!!phone)
+        {if(!!phone && balance>=+phone){
             const userCheck= await this.userService.findByUsername(req['user']['username']);
             console.log(userCheck);
             if(!!userCheck){
@@ -39,7 +49,9 @@ export class PaymentController {
                 req['user']['balance']= +req['user']['balance'] - phone;
                 console.log(userCheck);
                 const updatedUser= await this.userService.updateUser(userCheck.username, userCheck);
+                flag2=1;
                 console.log(`You have paid phone bill worth Rs. ${phone}`);
+                invoice2= `You have paid phone bill worth Rs. ${phone}`;
             }
             else{
                 throw new BadRequestException();
@@ -47,8 +59,19 @@ export class PaymentController {
         }
         else{
             throw new BadRequestException("Insufficient Balance");
+        }}
+
+        if(flag1===1 && flag2==1) {
+            return(`${invoice1}\n${invoice2}`);
         }
-        return("Transaction Complete");
+        else if(flag1==1){
+            return(`${invoice1}`);
+        }
+        else if(flag2==1){
+            return(`${invoice2}`);
+        }
+   
+        //return("Transaction Complete");
         
     }
 

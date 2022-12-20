@@ -27,7 +27,7 @@ content-type: application/json
 
 {
     "username": "local", 
-    "password": "local234"
+    "password": "localreset"
 }
 
 
@@ -72,23 +72,24 @@ content-type: application/json
 
 
 ###
-GET http://localhost:3000/bank/bills?electricity=600
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNTAwMC4wIiwiaWF0IjoxNjcxNDI0NzYzLCJleHAiOjE2NzE1MTExNjN9.J-H7rG4lemRiUia4FrGHHg-PG-aX5JMxJsNG05k_g5A
+GET http://localhost:3000/bank/bills?electricity=400
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNDcwMC4wIiwiaWF0IjoxNjcxNTEzODAyLCJleHAiOjE2NzE2MDAyMDJ9.Avu1GzV7JFgpcsJIO-GM8_fKe1aWGFzb4alXtBIU1Co
 
 
 ###
 
-GET http://localhost:3000/bank/bills?phone=400
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNTAwMC4wIiwiaWF0IjoxNjcxNDI0NzYzLCJleHAiOjE2NzE1MTExNjN9.J-H7rG4lemRiUia4FrGHHg-PG-aX5JMxJsNG05k_g5A
+GET http://localhost:3000/bank/bills?phone=600
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNDcwMC4wIiwiaWF0IjoxNjcxNTEzODAyLCJleHAiOjE2NzE2MDAyMDJ9.Avu1GzV7JFgpcsJIO-GM8_fKe1aWGFzb4alXtBIU1Co
 
 
 ###
 
-GET http://localhost:3000/bank/bills?electricity=200&phone=100
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNTAwMC4wIiwiaWF0IjoxNjcxNDI0NzYzLCJleHAiOjE2NzE1MTExNjN9.J-H7rG4lemRiUia4FrGHHg-PG-aX5JMxJsNG05k_g5A
+GET http://localhost:3000/bank/bills?electricity=400&phone=600
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxvY2FsIiwiZW1haWwiOiJsb2NhbEBnbWFpbC5jb20iLCJiYWxhbmNlIjoiNDcwMC4wIiwiaWF0IjoxNjcxNTEzODAyLCJleHAiOjE2NzE2MDAyMDJ9.Avu1GzV7JFgpcsJIO-GM8_fKe1aWGFzb4alXtBIU1Co
 
 
 ###
+
 
 
 
